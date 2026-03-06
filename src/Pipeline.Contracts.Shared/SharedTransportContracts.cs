@@ -30,13 +30,17 @@ public class PipelineMessageEndpointV1
     public string Topic { get; set; } = "";
 }
 
-public class PipelineRetryPolicyCoreV1
+public record PipelineRetryPolicyV1(
+    int MaxAttempts,
+    int BackoffMs);
+
+public class PipelineRetryPolicyRangeV1
 {
-    public PipelineRetryPolicyCoreV1()
+    public PipelineRetryPolicyRangeV1()
     {
     }
 
-    public PipelineRetryPolicyCoreV1(int maxAttempts, int initialBackoffMs, int maxBackoffMs)
+    public PipelineRetryPolicyRangeV1(int maxAttempts, int initialBackoffMs, int maxBackoffMs)
     {
         MaxAttempts = maxAttempts;
         InitialBackoffMs = initialBackoffMs;
@@ -58,7 +62,7 @@ public sealed record PipelineEnvelopeCoreV1(
     string Kind,
     int TtlMs,
     int Priority,
-    PipelineRetryPolicyCoreV1 RetryPolicy,
+    PipelineRetryPolicyV1 RetryPolicy,
     int HopCount = 0);
 
 public sealed record PipelineResultCoreV1(
