@@ -1,0 +1,26 @@
+﻿{
+  "schemaVersion": "adapter_authority_map_v1",
+  "entries": [
+    {
+      "adapterId": "session_jsonl_adapter",
+      "authorityOwner": "kitchen-sync",
+      "consumerOwner": "universal_pipeline",
+      "enabled": true,
+      "notes": "KS owns live session lane; UP consumes through bridge/API only."
+    },
+    {
+      "adapterId": "voxta_qwen_adapter",
+      "authorityOwner": "kitchen-sync",
+      "consumerOwner": "universal_pipeline",
+      "enabled": true,
+      "notes": "KS owns Qwen lane; UP consumes through bridge/API only."
+    },
+    {
+      "adapterId": "voxta_openai_adapter",
+      "authorityOwner": "kitchen-sync",
+      "consumerOwner": "universal_pipeline",
+      "enabled": true,
+      "notes": "KS owns OpenAI planning lane; UP consumes through bridge/API only."
+    }
+  ]
+}
